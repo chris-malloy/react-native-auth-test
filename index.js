@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import App from './App';
 import { AppRegistry } from 'react-native';
 import { Provider } from 'react-redux';
-import store from './redux';
+import { createStore } from 'redux';
+import rootReducer from './reducers/rootReducer';
 
-export default class RNCognito extends Component {
+let store = createStore(rootReducer);
+
+export default class auth_test extends Component {
     render() {
         return (
             <Provider store={store}>
@@ -14,4 +17,4 @@ export default class RNCognito extends Component {
     }
 }
 
-AppRegistry.registerComponent('RNCognito', () => RNCognito);
+AppRegistry.registerComponent('auth_test', () => auth_test);
